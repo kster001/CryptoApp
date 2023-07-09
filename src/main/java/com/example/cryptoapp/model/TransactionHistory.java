@@ -17,10 +17,10 @@ public class TransactionHistory {
     long id;
 
     @Column(name = "user_name")
-    private String user_name;
+    private String username;
 
     @Column(name = "transaction_type")
-    private BigDecimal transactionType;
+    private String transactionType;
 
     @Column(name = "size")
     private Double size;
@@ -28,39 +28,39 @@ public class TransactionHistory {
     @Column(name = "totalCost")
     private BigDecimal totalCost;
 
-    @Column(name = "ask_size")
-    private long crypto_pricing_id;
+    @Column(name = "crypto_pricing_id")
+    private long cryptoPricingId;
 
     @Column(name = "date/time")
     private String datetime = dateFormat.format(new Date());
 
 
-    public TransactionHistory(long id, String user_name, BigDecimal transactionType, Double size, BigDecimal totalCost, long crypto_pricing_id) {
-        this.id = id;
-        this.user_name = user_name;
+    public TransactionHistory(String username, String transactionType, Double size, BigDecimal totalCost,
+                              long cryptoPricingId) {
+        this.username = username;
         this.transactionType = transactionType;
         this.size = size;
         this.totalCost = totalCost;
-        this.crypto_pricing_id = crypto_pricing_id;
+        this.cryptoPricingId = cryptoPricingId;
     }
 
     public TransactionHistory() {
 
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public BigDecimal getTransactionType() {
+    public String getTransactionType() {
         return transactionType;
     }
 
-    public void setTransactionType(BigDecimal transactionType) {
+    public void setTransactionType(String transactionType) {
         this.transactionType = transactionType;
     }
 
@@ -81,11 +81,11 @@ public class TransactionHistory {
     }
 
     public long getCrypto_pricing_id() {
-        return crypto_pricing_id;
+        return cryptoPricingId;
     }
 
-    public void setCrypto_pricing_id(long crypto_pricing_id) {
-        this.crypto_pricing_id = crypto_pricing_id;
+    public void setCrypto_pricing_id(long cryptoPricingId) {
+        this.cryptoPricingId = cryptoPricingId;
     }
 
     public Date getDatetime() {

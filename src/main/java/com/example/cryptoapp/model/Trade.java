@@ -1,28 +1,32 @@
 package com.example.cryptoapp.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "TRADE")
 public class Trade {
 
-    private String user_name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    long id;
 
-    private String transaction_type;
+    @Column(name = "user_name")
+    private String username;
 
+    @Column(name = "size")
     private Double size;
 
-    private long crypto_pricing_id;
+    @Column(name = "crypto_pricing_id")
+    private long cryptoPricingId;
 
-    public Trade(String user_name, String transaction_type, Double size, long crypto_pricing_id) {
-        this.user_name = user_name;
-        this.transaction_type = transaction_type;
+    public Trade(String username, Double size, long cryptoPricingId) {
+        this.username = username;
         this.size = size;
-        this.crypto_pricing_id = crypto_pricing_id;
+        this.cryptoPricingId = cryptoPricingId;
     }
 
-    public String getTransaction_type() {
-        return transaction_type;
-    }
+    public Trade() {
 
-    public void setTransaction_type(String transaction_type) {
-        this.transaction_type = transaction_type;
     }
 
     public Double getSize() {
@@ -33,19 +37,20 @@ public class Trade {
         this.size = size;
     }
 
-    public long getCrypto_pricing_id() {
-        return crypto_pricing_id;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setCrypto_pricing_id(long crypto_pricing_id) {
-        this.crypto_pricing_id = crypto_pricing_id;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public long getCryptoPricingId() {
+        return cryptoPricingId;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setCryptoPricingId(long cryptoPricingId) {
+        this.cryptoPricingId = cryptoPricingId;
     }
 }
