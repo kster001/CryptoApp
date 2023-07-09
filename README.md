@@ -1,8 +1,8 @@
 # CryptoApp
 
-###API Endpoint Description:
+### API Endpoint Description:
 
-####1. Trading endpoint:
+#### 1. Trading endpoint:
     - url => /api/trade
     - Post Request
     - Require the following JSON request body
@@ -14,18 +14,18 @@
       }
 
 
-####2. View wallet balance endpoint:
+#### 2. View wallet balance endpoint:
     - url => /api/wallets/{username}
     - Get Request
     - url parameter => crypto application user's username
 
 
-####3. View latest pricing endpoint:
+#### 3. View latest pricing endpoint:
     - url => /api/cryptoPricings
     - Get Request
 
 
-####4. View Transaction history endpoint:
+#### 4. View Transaction history endpoint:
     - url => /api/transactionHistory/{username}
     - Get Request
     - url parameter => crypto application user's username
